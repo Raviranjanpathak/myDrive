@@ -18,7 +18,7 @@ const handleSubmit = async () => {
     localStorage.setItem("token", res.data.token);
     toast.success("Login successful 🎉");
 
-    window.location.href = "/dashboard";
+    navigate("/dashboard");
 
   } catch (err) {
     toast.error(err.response?.data?.msg || "Login failed ❌");
