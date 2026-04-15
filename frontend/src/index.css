@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: 0.3s;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #111;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* LIGHT CONTAINER */
+body.light .container {
+  background: white;
+}
+
+/* DARK CONTAINER */
+body.dark .container {
+  background: #1e293b;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* DARK INPUT */
+body.dark input {
+  background: #334155;
+  color: white;
+  border: 1px solid #475569;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* BUTTON HOVER */
+button:hover {
+  background: #4338ca;
+}
+/* ================= DARK MODE IMPROVEMENTS ================= */
+
+/* TEXT COLOR FIX */
+body.dark p {
+  color: #cbd5f5;
+}
+
+/* BUTTON (outline type fix for dark bg) */
+body.dark button {
+  background: #6366f1;
+}
+
+body.dark button:hover {
+  background: #4f46e5;
+}
+
+/* LINKS */
+body.dark a {
+  color: #818cf8;
+}
+
+/* FOOTER FIX */
+body.dark div[style*="background: #ffffff"] {
+  background: #0f172a !important;
+  color: #fff;
+  border-top: 1px solid #334155 !important;
+}
+
+/* CARD STYLE FIX (Dashboard + Home cards) */
+body.dark div[style*="background: white"] {
+  background: #1e293b !important;
+  color: #fff !important;
+}
+
+/* SELECT DROPDOWN */
+body.dark select {
+  background: #334155;
+  color: white;
+  border: 1px solid #475569;
+}
+
+/* IMAGE BORDER */
+body.dark img {
+  border: 1px solid #334155;
+}
+
+/* SCROLLBAR (optional premium look) */
+body.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
