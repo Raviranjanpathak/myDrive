@@ -192,7 +192,7 @@ export default function Dashboard() {
                 transition: "0.2s"
               }}>
                 <img
-                 src={`http://localhost:5000/uploads/${file.path}`}
+                 src={`https://mydrive-z0ca.onrender.com/uploads/${file.path}`}
                   alt=""
                   style={{
                     width: "100%",
