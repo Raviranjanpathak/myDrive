@@ -4,6 +4,7 @@ import FolderTree from "../components/FolderTree";
 import UploadForm from "../components/UploadForm";
 import Navbar from "../components/Navbar";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const [folders, setFolders] = useState([]);
@@ -12,9 +13,10 @@ export default function Dashboard() {
   const [files, setFiles] = useState([]);
 
   //  PROTECT ROUTE
+  const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      window.location.href = "/login";
+      navigate("/login");
     }
   }, []);
 
@@ -166,7 +168,7 @@ export default function Dashboard() {
           marginBottom: "25px"
         }}>
           <h3 style={{ marginBottom: "10px" }}>📤 Upload Image</h3>
-          <UploadForm folders={folders} />
+          <UploadForm folders={folders} fetchFiles={fetchFiles} />
         </div>
 
         {/* FILES */}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import API from "../api/axios";
 import toast from "react-hot-toast";
 
-export default function UploadForm({ folders }) {   
+export default function UploadForm({ folders, fetchFiles }) {  
   const [file, setFile] = useState(null);
   const [folder, setFolder] = useState("");         
 
@@ -16,7 +16,9 @@ export default function UploadForm({ folders }) {
     await API.post("/files/upload", formData);
     toast.success("Uploaded 🎉");
     // window.location.reload(); 
-    fetchFiles();
+    if (fetchFiles) {
+  fetchFiles();
+}
   };
 
   return (
