@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
    baseURL: "https://mydrive-z0ca.onrender.com/api",
-   imeout: 5000
+   timeout: 5000
 });
 
 API.interceptors.request.use((req) => {
