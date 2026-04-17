@@ -42,7 +42,7 @@ const handleSubmit = async () => {
       onChange={(e) => setForm({ ...form, password: e.target.value })}
     />
 
-    <button disabled={loading}>
+    <button onClick={handleSubmit} disabled={loading}>
   {loading ? "Please wait..." : "Login"}
 </button>
   </div>
