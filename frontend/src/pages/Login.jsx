@@ -5,23 +5,25 @@ import toast from "react-hot-toast";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
 const handleSubmit = async () => {
+  setLoading(true);
   try {
     const res = await API.post("/auth/login", {
       email: form.email,
       password: form.password
     });
-    const savedTheme = localStorage.getItem("theme") || "light";
-    document.body.className = savedTheme;
+
     localStorage.setItem("token", res.data.token);
     toast.success("Login successful 🎉");
-
     navigate("/dashboard");
 
   } catch (err) {
     toast.error(err.response?.data?.msg || "Login failed ❌");
+  } finally {
+    setLoading(false);
   }
 };
 
@@ -40,7 +42,9 @@ const handleSubmit = async () => {
       onChange={(e) => setForm({ ...form, password: e.target.value })}
     />
 
-    <button onClick={handleSubmit}>Login</button>
+    <button disabled={loading}>
+  {loading ? "Please wait..." : "Login"}
+</button>
   </div>
 );
 }

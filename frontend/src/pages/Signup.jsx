@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 export default function Signup() {
   const [form, setForm] = useState({ name:"", email:"", password:"" });
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
 const handleSubmit = async () => {
